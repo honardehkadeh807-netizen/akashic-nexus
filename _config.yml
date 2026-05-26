@@ -4,3 +4,6 @@ url: "https://honardehkadeh807-netizen.github.io"
 baseurl: "/akashic-nexus" 
 theme: jekyll-theme-hacker 
 permalink: /:title/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
