@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- جادوی GEO: اتصال مختصات جغرافیایی به محتوا برای تسخیر جستجوهای محلی و جهانی -->
+    <meta name="geo.region" content="IR" />
+    <meta name="geo.placename" content="Global" />
+    
+    <!-- پردازش سیگنال و علوم شناختی: استفاده از Open Graph برای تسخیر شبکه های اجتماعی -->
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.description | default: site.description }}" />
+    <meta property="og:type" content="article" />
+    
+    <!-- طلسمِ نفوذ به هسته GEO و موتورهای هوش مصنوعی (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ page.title }}",
+      "author": {
+        "@type": "Organization",
+        "name": "The Akashic Leviathan"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/120px-React-icon.svg.png"
+        }
+      },
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "description": "{{ page.description | default: site.description }}"
+    }
+    </script>
+    
+    <style>
+        body { font-family: 'Tahoma', sans-serif; line-height: 1.8; color: #333; background: #fdfdfd; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #111; border-bottom: 2px solid #000; padding-bottom: 5px; }
+        .content { margin-top: 30px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="{{ site.baseurl }}/" style="color: black; text-decoration: none;">{{ site.title }}</a></h1>
+        <p><i>{{ site.description }}</i></p>
+    </header>
+    
+    <article class="content">
+        <!-- این دستور محتوایی که رباتِ تو ساخته را به درونِ این کالبد تزریق می‌کند -->
+        {{ content }}
+    </article>
+</body>
+</html>
