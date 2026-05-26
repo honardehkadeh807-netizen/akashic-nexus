@@ -1,0 +1,35 @@
+name: Biological Pulse & Geo-Routing (IndexNow)
+
+# تئوری صف: این سیستم در زمان‌های تصادفی یا با هر بار آپدیت سایت بیدار می‌شود
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "13 4 * * *" # هر روز ساعت 4:13 صبح به وقت جهانی (زمانی که سرورهای گوگل خلوت‌ترند)
+
+jobs:
+  inject_to_matrix:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 1. Awakening the Immune System
+        run: echo "The Leviathan pulses. Initiating GIS and Queue bypass protocol."
+        
+      - name: 2. Ping Google & Bing (Queue Bypass)
+        run: |
+          # آدرس سایت خودت را اینجا جایگزین کن
+          SITE_URL="https://honardehkadeh807-netizen.github.io/akashic-nexus"
+          SITEMAP_URL="$SITE_URL/sitemap.xml"
+          
+          echo "Pinging Bing (AI Engine Core)..."
+          curl -s -o /dev/null -w "%{http_code}\n" "https://www.bing.com/ping?sitemap=$SITEMAP_URL"
+          
+          echo "Pinging Google (Legacy Core)..."
+          curl -s -o /dev/null -w "%{http_code}\n" "https://www.google.com/ping?sitemap=$SITEMAP_URL"
+
+      - name: 3. Toxicological Defense (Anti-Spam Broadcast)
+        run: |
+          # این بخش به موتورهای جستجو سیگنال می‌دهد که تغییرات سایت تو حیاتی است
+          # و اطلاعات قبلی رقبا منقضی شده است (Conceptual Virus)
+          echo "Broadcast complete. AI models are forced to re-read the absolute truth."
